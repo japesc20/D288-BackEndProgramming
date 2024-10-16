@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table (name = "carts")
@@ -16,8 +17,11 @@ import java.util.Date;
 public class Cart {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "cart_id")
-    private Long cart_id;
+    @Column (name = "id")
+    private Long id;
+
+    @Column (name = "order_tracking_number")
+    private String orderTrackingNumber;
 
     @Column (name = "package_price")
     private BigDecimal package_price;
@@ -29,9 +33,6 @@ public class Cart {
     @Column (name = "status")
     private StatusType status;
 
-    @Column (name = "order_tracking_number")
-    private String order_tracking_number;
-
     @Column (name = "create_date")
     @CreationTimestamp
     private Date create_date;
@@ -40,7 +41,11 @@ public class Cart {
     @UpdateTimestamp
     private Date last_update;
 
-    @Column (name = "customer_id")
-    private Long customer_id;
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @OneToMany(mappedBy = "cart")
+    private Set<CartItem> cartItem;
 
 }
