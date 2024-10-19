@@ -17,12 +17,14 @@ public class CartItem {
     @Column (name = "cart_item_id")
     private Long id;
 
+    @ManyToOne
     @Column (name = "vacation")
     private Vacation vacation;
 
     @ManyToMany
     private Set<Excursion> excursions;
 
+    @ManyToOne
     @Column (name = "cart_id")
     private Cart cart;
 
@@ -32,4 +34,7 @@ public class CartItem {
     @Column (name = "last_update")
     private Date last_update;
 
+    public CartItem() {
+
+    };
 }
