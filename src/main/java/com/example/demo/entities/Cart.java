@@ -3,6 +3,8 @@ package com.example.demo.entities;
 import com.fasterxml.jackson.databind.DatabindException;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 

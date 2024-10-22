@@ -2,6 +2,8 @@ package com.example.demo.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.Set;
@@ -18,14 +20,19 @@ public class CartItem {
     private Long id;
 
     @ManyToOne
-    @Column (name = "vacation")
+    @JoinColumn (name = "vacation")
     private Vacation vacation;
 
     @ManyToMany
+    @JoinTable(
+            name = "excursion_cartitem",
+            joinColumns = @JoinColumn(name = "cart_item_id"),
+            inverseJoinColumns = @JoinColumn(name = "excursion_id")
+    )
     private Set<Excursion> excursions;
 
     @ManyToOne
-    @Column (name = "cart_id")
+    @JoinColumn (name = "cart_id")
     private Cart cart;
 
     @Column (name = "create_date")

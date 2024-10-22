@@ -34,10 +34,10 @@ public class Excursion {
     private Date last_update;
 
     @ManyToOne
-    @Column (name = "vacation_id")
+    @JoinColumn (name = "vacation_id")
     private Vacation vacation;
 
-    @OneToMany (cascade = CascadeType.ALL, mappedBy = "excursion")
+    @ManyToMany (cascade = CascadeType.ALL, mappedBy = "excursions")
     private Set<CartItem> cartItems;
 
     public Excursion() {

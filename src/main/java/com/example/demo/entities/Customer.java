@@ -3,6 +3,8 @@ package com.example.demo.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.Set;
@@ -11,6 +13,7 @@ import java.util.Set;
 @Entity
 @Table(name = "customers")
 @Data
+
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
