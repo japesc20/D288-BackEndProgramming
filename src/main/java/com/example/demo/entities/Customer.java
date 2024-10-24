@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -17,6 +18,8 @@ import java.util.Set;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    // Each column from table 'customers' from the Mysql database & UML diagram
     @Column (name = "customer_id")
     private Long id;
 
@@ -45,7 +48,7 @@ public class Customer {
     private Division division;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-    private Set<Cart> carts;
+    private Set<Cart> carts = new HashSet<>();
 
     public Customer() {
 

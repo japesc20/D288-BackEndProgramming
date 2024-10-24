@@ -15,6 +15,8 @@ import java.util.Set;
 public class Excursion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    // Each column from table 'excursions' from the Mysql database & UML diagram
     @Column (name = "excursion_id")
     private Long id;
 

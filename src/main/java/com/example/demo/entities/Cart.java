@@ -1,6 +1,5 @@
 package com.example.demo.entities;
 
-import com.fasterxml.jackson.databind.DatabindException;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -10,15 +9,19 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table (name = "carts")
 @Data
 
+
 public class Cart {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
+
+    // Each column from table 'carts' from the Mysql database & UML diagram
     @Column (name = "id")
     private Long id;
 
@@ -48,7 +51,7 @@ public class Cart {
     private Customer customer;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
-    private Set<CartItem> cartItem;
+    private Set<CartItem> cartItem = new HashSet<>();
 
     public Cart() {
 

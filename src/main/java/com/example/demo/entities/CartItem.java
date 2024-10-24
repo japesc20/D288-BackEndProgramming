@@ -16,6 +16,8 @@ import java.util.Set;
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    // Each column from table 'cart_items' from the Mysql database & UML diagram
     @Column (name = "cart_item_id")
     private Long id;
 

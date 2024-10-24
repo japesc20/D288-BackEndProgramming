@@ -16,6 +16,8 @@ import java.util.Set;
 public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    // Each column from table 'divisions' from the Mysql database & UML diagram
     @Column (name = "division_id")
     private Long id;
 

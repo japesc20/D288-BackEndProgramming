@@ -15,6 +15,8 @@ import java.util.Set;
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    // Each column from table 'countries' from the Mysql database & UML diagram
     @Column (name = "country_id")
     private Long id;
 
