@@ -59,4 +59,9 @@ public class Cart {
 
     };
 
+    // Add method needed for CheckoutServiceImpl - forEach loop
+    public void add(CartItem cartItem) {
+        this.cartItem.add(cartItem);
+    }
+
 }
