@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 import java.util.Set;
@@ -11,7 +13,9 @@ import java.util.Set;
 
 @Entity
 @Table (name = "cart_items")
-@Data
+//@Data
+@Getter
+@Setter
 
 public class CartItem {
     @Id
@@ -22,7 +26,7 @@ public class CartItem {
     private Long id;
 
     @ManyToOne
-    @JoinColumn (name = "vacation")
+    @JoinColumn (name = "vacation_id")
     private Vacation vacation;
 
     @ManyToMany
@@ -38,9 +42,11 @@ public class CartItem {
     private Cart cart;
 
     @Column (name = "create_date")
+    @CreationTimestamp
     private Date create_date;
 
     @Column (name = "last_update")
+    @UpdateTimestamp
     private Date last_update;
 
     public CartItem() {

@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,7 +14,9 @@ import java.util.Set;
 
 @Entity
 @Table(name = "vacations")
-@Data
+//@Data
+@Getter
+@Setter
 
 public class Vacation {
     @Id
@@ -35,9 +39,11 @@ public class Vacation {
     private String image_url;
 
     @Column (name = "create_date")
+    @CreationTimestamp
     private Date create_date;
 
     @Column (name = "last_update")
+    @UpdateTimestamp
     private Date last_update;
 
     @OneToMany (cascade = CascadeType.ALL, mappedBy = "vacation")

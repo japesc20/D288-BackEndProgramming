@@ -14,7 +14,9 @@ import java.util.Set;
 
 @Entity
 @Table (name = "carts")
-@Data
+//@Data
+@Getter
+@Setter
 
 
 public class Cart {
@@ -22,7 +24,7 @@ public class Cart {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
 
     // Each column from table 'carts' from the Mysql database & UML diagram
-    @Column (name = "id")
+    @Column (name = "cart_id")
     private Long id;
 
     @Column (name = "order_tracking_number")
