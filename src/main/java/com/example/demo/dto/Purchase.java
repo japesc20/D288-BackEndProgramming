@@ -10,7 +10,6 @@ import lombok.Setter;
 
 import java.util.Set;
 
-@Data
 @Getter
 @Setter
 

@@ -52,6 +52,9 @@ public class CheckoutServiceImpl implements CheckoutService {
             cartItem.setCart(cart);
         });
 
+        // Add cart to customer
+        customer.add(cart);
+
         // Set status of order
         cart.setStatus(StatusType.ORDERED);
 
