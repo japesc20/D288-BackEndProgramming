@@ -49,8 +49,4 @@ public class Vacation {
     @OneToMany (cascade = CascadeType.ALL, mappedBy = "vacation")
     private Set<Excursion> excursions;
 
-
-    public Vacation() {
-
-    };
 }

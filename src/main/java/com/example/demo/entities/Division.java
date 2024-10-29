@@ -46,7 +46,4 @@ public class Division {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "division")
     private Set<Customer> customers;
 
-    public Division() {
-
-    };
 }

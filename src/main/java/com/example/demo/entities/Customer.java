@@ -65,7 +65,4 @@ public class Customer {
         this.carts.add(cart);
     }
 
-    public Customer() {
-
-    };
 }

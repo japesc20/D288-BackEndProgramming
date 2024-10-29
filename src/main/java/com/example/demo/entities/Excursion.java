@@ -50,7 +50,4 @@ public class Excursion {
     @ManyToMany (cascade = CascadeType.ALL, mappedBy = "excursions")
     private Set<CartItem> cartItems;
 
-    public Excursion() {
-
-    };
 }

@@ -38,8 +38,5 @@ public class Country {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "country")
     private Set<Division> divisions;
 
-    public Country() {
-
-    };
 }
 
