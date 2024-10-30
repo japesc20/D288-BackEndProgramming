@@ -2,7 +2,6 @@ package com.example.demo.entities;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -15,7 +14,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "customers")
-//@Data
 @Getter
 @Setter
 
@@ -55,7 +53,7 @@ public class Customer {
     private Date last_update;
 
     @ManyToOne
-    @JoinColumn(name = "division_id", nullable = false)
+    @JoinColumn(name = "division_id")
     private Division division;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")

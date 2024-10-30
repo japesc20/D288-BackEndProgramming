@@ -3,8 +3,6 @@ package com.example.demo.services;
 import com.example.demo.dao.CartItemRepository;
 import com.example.demo.dao.CartRepository;
 import com.example.demo.dao.CustomerRepository;
-import com.example.demo.dto.Purchase;
-import com.example.demo.dto.PurchaseResponse;
 import com.example.demo.entities.Cart;
 import com.example.demo.entities.CartItem;
 import com.example.demo.entities.Customer;
@@ -56,7 +54,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         customer.add(cart);
 
         // Set status of order
-        cart.setStatus(StatusType.ORDERED);
+        cart.setStatus(StatusType.ordered);
 
         // Save customer and cart to database
         customerRepository.save(customer);
