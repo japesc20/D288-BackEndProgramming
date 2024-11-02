@@ -51,12 +51,12 @@ public class Cart {
     private Customer customer;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
-    private Set<CartItem> cartItem = new HashSet<>();
+    private Set<CartItem> cartItems = new HashSet<>();
 
 
     // Add method needed for CheckoutServiceImpl - forEach loop
     public void add(CartItem cartItem) {
-        this.cartItem.add(cartItem);
+        this.cartItems.add(cartItem);
     }
 
 }

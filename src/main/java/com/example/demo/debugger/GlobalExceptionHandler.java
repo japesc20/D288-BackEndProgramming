@@ -10,6 +10,11 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ *  Internal and External server Errors and Bad Request error handling
+ */
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

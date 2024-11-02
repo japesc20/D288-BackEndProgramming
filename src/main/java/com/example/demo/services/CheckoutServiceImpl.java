@@ -33,8 +33,10 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // Receive cart info from dto
         Cart cart = purchase.getCart();
+
         // Populate cart with cartItems
         Set<CartItem> cartItems = purchase.getCartItems();
+
         // Populate customer with cart
         Customer customer = purchase.getCustomer();
 
@@ -58,7 +60,6 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // Save customer and cart to database
         customerRepository.save(customer);
-        cartRepository.save(cart);
 
         // Return a response
         return new PurchaseResponse(orderTrackingNumber);

@@ -12,7 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
-
+import java.util.List;
 
 
 @Component
@@ -47,6 +47,7 @@ public class BootStrapData implements CommandLineRunner {
         for (int i=0; i < Arrays.stream(sampleCustomerArray).count(); ++i) {
 
             if(customerRepository.count() > 5) {
+                log.info(String.valueOf("Number of customers in Repo: " + customerRepository.count()));
                 return;
             }
 
@@ -67,8 +68,13 @@ public class BootStrapData implements CommandLineRunner {
             newCustomer.setDivision(division);
 
             customerRepository.save(newCustomer);
-            // Debugger to make sure each customer is saved
-            log.info("Saved new customer: " + newCustomer.getFirstName() + " " + newCustomer.getLastName());
+
+//            // Debugger to make sure each customer is saved
+//            log.info("Saved new customer: " + newCustomer.getFirstName() + " " + newCustomer.getLastName());
         }
+//        // Debugging - Not populating in DB
+//        log.info("Number of customers after saving: " + customerRepository.count());
+//        List<Customer> customers = customerRepository.findAll();
+//        customers.forEach(customer -> log.info("Customer in DB: " + customer.getFirstName() + " " + customer.getLastName()));
     }
 }
